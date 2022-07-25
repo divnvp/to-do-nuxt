@@ -24,6 +24,8 @@
   align-items: center;
   justify-content: flex-end;
 
+  font-family: "VelaSans", sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
 
