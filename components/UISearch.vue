@@ -17,16 +17,24 @@
 .search {
   display: flex;
   align-items: center;
+
+  &__input {
+    margin-left: 16px;
+    min-width: 227px;
+
+    border: none;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
 }
 
-.search__input {
-  margin-left: 16px;
-  min-width: 227px;
+input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 132%;
 
-  border: none;
-}
-
-.search__input:focus {
-  outline: none;
+  color: #C4C4C4;
 }
 </style>
