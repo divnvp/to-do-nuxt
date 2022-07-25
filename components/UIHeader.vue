@@ -21,6 +21,9 @@
   flex: 1 1 0;
 
   &__title {
+    font-family: "Montserrat", serif;
+    color: #16191D;
+    
     font-weight: 700;
     font-size: 24px;
     line-height: 132%;
