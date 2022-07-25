@@ -6,7 +6,7 @@ import UIMain from './UIMain.vue';
 
 <template>
   <div>
-    <header>
+    <header class="margin-left">
       <UIHeader />
     </header>
 
@@ -17,5 +17,7 @@ import UIMain from './UIMain.vue';
 </template>
 
 <style lang="scss">
-
+.margin-left {
+  margin-left: 40px;
+}
 </style>
