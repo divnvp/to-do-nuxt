@@ -1,7 +1,7 @@
 <script setup>
 import UISearch from './UISearch.vue';
 import UISort from './UISort.vue';
-import UITable from './UITable.vue';
+import UITable from './table/UITable.vue';
 
 </script>
 
