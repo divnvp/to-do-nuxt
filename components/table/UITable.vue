@@ -79,8 +79,9 @@ header {
     align-items: center;
     flex: 1 1 0;
 
-    margin-bottom: 17px;
-    margin-left: 100px;
+    margin-bottom: 5px;
+    margin-left: calc(100px - 17px + 150px);
+    margin-right: calc(150px + 15px);
 
     font-family: "VelaSans", sans-serif;
     font-weight: 400;
@@ -111,6 +112,9 @@ header {
     flex-direction: column;
     justify-content: center;
     flex: 1 1 0;
+
+    margin-left: 150px;
+    margin-right: 150px;
   }
 }
 </style>

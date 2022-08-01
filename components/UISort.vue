@@ -38,11 +38,13 @@ watch(selectedSortBy, (newValue) => {
   font-weight: 400;
   font-size: 14px;
 
+  margin-right: 150px;
+
   &__select {
     font-weight: 400;
     font-size: 14px;
 
-    margin-left: 15px;
+    margin-left: 10px;
 
     border: none;
   }

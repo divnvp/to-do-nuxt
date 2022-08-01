@@ -31,6 +31,8 @@ const searchModel = computed({
   display: flex;
   align-items: center;
 
+  margin-left: 150px;
+
   &__input {
     margin-left: 16px;
     min-width: 227px;

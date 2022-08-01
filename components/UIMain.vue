@@ -46,7 +46,7 @@ function sortRecords(sortBy) {
     justify-content: space-between;
     flex: 1 1 0;
 
-    margin-top: 34px;
+    margin-top: 30px;
     margin-left: 40px;
   }
 

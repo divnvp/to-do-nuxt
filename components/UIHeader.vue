@@ -38,6 +38,8 @@ function createTask(taskName) {
   justify-content: space-between;
   flex: 1 1 0;
 
+  padding: 104px 150px 0 150px;
+
   &__title {
     font-family: "Montserrat", serif;
     color: #16191D;
