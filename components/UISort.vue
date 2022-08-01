@@ -3,7 +3,7 @@ import { defineEmits, ref, watch } from "vue";
 
 const emit = defineEmits(["sort"]);
 
-const selectedSortBy = ref("Дата");
+const selectedSortBy = ref("date");
 
 watch(selectedSortBy, (newValue) => {
   emit("sort", newValue);

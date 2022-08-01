@@ -4,10 +4,8 @@ import { defineProps } from "vue";
 import TableRow from './TableRow.vue';
 
 defineProps({
-  searching: String,
   records: { type: Array, required: true }
 });
-
 </script>
 
 <template>

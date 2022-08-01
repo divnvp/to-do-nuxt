@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits } from "vue";
 // Components
 import UISearch from './UISearch.vue';
 import UISort from './UISort.vue';
@@ -8,18 +8,10 @@ import UITable from './table/UITable.vue';
 defineProps({
   records: { type: Array, required: true }
 });
-
-const emit = defineEmits(["sort"]);
-
-const searchInput = ref("");
+const emit = defineEmits(["sort", "search"]);
 
 function setSearchInput(value) {
-  searchInput.value = value;
-  console.log(value);
-}
-
-function getSearchingValue() {
-
+  emit("search", value);
 }
 
 function sortRecords(sortBy) {
@@ -31,18 +23,17 @@ function sortRecords(sortBy) {
   <section>
     <section class="list-actions">
       <UISearch
-        v-model="searchInput"
-        @update="setSearchInput"
+        @search="setSearchInput"
       />
 
-      <UISort @sort="sortRecords" />
+      <UISort
+        @sort="sortRecords"
+      />
     </section>
 
     <section class="list-table">
       <UITable
-        :searching="searchInput"
         :records="records"
-        @search="getSearchingValue"
       />
     </section>
   </section>

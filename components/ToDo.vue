@@ -54,6 +54,18 @@ function sortRecords(by) {
     records.value = JSON.parse(localStorage.getItem("records"));
   }
 }
+
+function searchRecord(value) {
+  records.value = JSON.parse(localStorage.getItem("records"));
+
+  if (value) {
+    records.value = records.value.filter((record, index) => index + 1 == value ||
+      record.name.includes(value) ||
+      record.status.includes(value) ||
+      new Date(record.date).toLocaleDateString().includes(value)
+    );
+  }
+}
 </script>
 
 <template>
@@ -63,7 +75,11 @@ function sortRecords(by) {
     </header>
 
     <main>
-      <UIMain :records="records" @sort="sortRecords" />
+      <UIMain
+        :records="records"
+        @sort="sortRecords"
+        @search="searchRecord"
+      />
     </main>
   </div>
 </template>

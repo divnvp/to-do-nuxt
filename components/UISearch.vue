@@ -1,18 +1,15 @@
 <script setup>
 import { defineProps, defineEmits, computed } from "vue";
 
-const props = defineProps({
-  modelValue: String
-});
-const emit = defineEmits(["update:modelValue", "update"]);
+const emit = defineEmits(["update:modelValue", "search"]);
 
 const searchModel = computed({
   get() {
-    return props.modelValue;
+    return "";
   },
-  
+
   set(newValue) {
-    emit("update", newValue);
+    emit("search", newValue);
   }
 })
 </script>
