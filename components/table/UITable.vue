@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
+// Components
 import TableRow from './TableRow.vue';
 
 defineProps({

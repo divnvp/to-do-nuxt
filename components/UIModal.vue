@@ -1,5 +1,5 @@
 <script setup>
-import {defineEmits, ref} from "vue";
+import { defineEmits, ref } from "vue";
 
 defineEmits(["close", "create"]);
 
