@@ -4,7 +4,7 @@ import { ref } from "vue";
 import UIHeader from './UIHeader.vue';
 import UIMain from './UIMain.vue';
 
-const records = ref([
+const records = ref(JSON.parse(localStorage.getItem("records")) || [
   { name: "Размещение новостей на сайте", status: "Выполнено", date: "22.04.2022" },
   { name: "Внедрить Wi-fi для читателей", status: "В работе", date: "22.04.2022" },
   { name: "Отредактировать раздел “Доступная среда”", status: "Выполнено", date: "22.04.2022" },
@@ -22,6 +22,8 @@ function createTask(taskName) {
     status: "В работе",
     date: new Date().toLocaleDateString()
   });
+
+  localStorage.setItem("records", JSON.stringify(records.value));
 }
 </script>
 
