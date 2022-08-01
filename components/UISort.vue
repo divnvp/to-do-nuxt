@@ -1,19 +1,28 @@
 <script setup>
+import { defineEmits, ref, watch } from "vue";
 
+const emit = defineEmits(["sort"]);
+
+const selectedSortBy = ref("Дата");
+
+watch(selectedSortBy, (newValue) => {
+  emit("sort", newValue);
+})
 </script>
 
 <template>
   <article class="sort">
     <span>Сортировать по:</span>
 
-    <select class="sort__select">
-      <optgroup>
-        <option
-          selected
-        >
-          Дата
-        </option>
-      </optgroup>
+    <select v-model="selectedSortBy" class="sort__select">
+      <option value="default">(Нет)</option>
+      <option
+        value="date"
+        selected
+      >
+        Дата
+      </option>
+      <option value="status">Статус</option>
     </select>
   </article>
 </template>

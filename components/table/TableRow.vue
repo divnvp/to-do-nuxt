@@ -17,7 +17,7 @@ defineProps({
         {{ record.name }}
       </span>
     </div>
-    
+
     <div class="tr-col">
       <span
         class="tr-col__status"
@@ -29,7 +29,7 @@ defineProps({
 
     <div class="tr-col">
       <span>
-        {{ record.date }}
+        {{ new Date(record.date).toLocaleDateString() }}
       </span>
     </div>
   </div>
@@ -106,5 +106,5 @@ defineProps({
     outline: none;
     border: none;
   }
-} 
+}
 </style>
