@@ -1,17 +1,12 @@
 <script setup>
+import { defineProps } from "vue";
 import TableRow from './TableRow.vue';
 
-const records = [
-  { id: 1, name: "Размещение новостей на сайте", status: "Выполнено", date: "22.04.2022" },
-  { id: 2, name: "Внедрить Wi-fi для читателей", status: "В работе", date: "22.04.2022" },
-  { id: 3, name: "Отредактировать раздел “Доступная среда”", status: "Выполнено", date: "22.04.2022" },
-  { id: 4, name: "Презентация “Информационные технологии”", status: "В работе", date: "22.04.2022" },
-  { id: 5, name: "Счётчики — внедрить дизайн", status: "В работе", date: "22.04.2022" },
-  { id: 6, name: "Сверстать новый layout", status: "В работе", date: "22.04.2022" },
-  { id: 7, name: "Скролл в новостях", status: "Выполнено", date: "22.04.2022" },
-  { id: 8, name: "Форма сброса пароля", status: "В работе", date: "22.04.2022" },
-  { id: 9, name: "Внедрение модуля Chat", status: "Выполнено", date: "22.04.2022" }
-]
+defineProps({
+  searching: String,
+  records: { type: Array, required: true }
+});
+
 </script>
 
 <template>
@@ -21,7 +16,7 @@ const records = [
         <hr />
         <span>Описание</span>
       </aside>
-      
+
       <aside class="table-header__name" style="margin-left: 58%">
         <hr />
         <span>Статус</span>
@@ -35,8 +30,8 @@ const records = [
 
     <div class="table-body">
       <TableRow
-        v-for="record in records"
-        :key="record.id"
+        v-for="(record, index) in records"
+        :key="index"
         :record="record"
       />
     </div>

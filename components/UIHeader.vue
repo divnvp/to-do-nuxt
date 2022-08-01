@@ -1,5 +1,17 @@
 <script setup>
+import { ref, defineEmits } from "vue";
+// Components
+import UIModal from "./UIModal";
 
+const emit = defineEmits(["create"]);
+
+const isOpened = ref(false);
+
+function createTask(taskName) {
+  emit("create", taskName);
+
+  isOpened.value = false;
+}
 </script>
 
 <template>
@@ -8,9 +20,15 @@
       To do list
     </span>
 
-    <button class="header__button-add">
+    <button @click="isOpened = true" class="header__button-add">
       +
     </button>
+
+    <UIModal
+      v-if="isOpened"
+      @close="isOpened = false"
+      @create="createTask"
+    />
   </section>
 </template>
 
@@ -23,7 +41,7 @@
   &__title {
     font-family: "Montserrat", serif;
     color: #16191D;
-    
+
     font-weight: 700;
     font-size: 24px;
     line-height: 132%;

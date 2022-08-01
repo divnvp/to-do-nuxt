@@ -1,5 +1,20 @@
 <script setup>
+import { defineProps, defineEmits, computed } from "vue";
 
+const props = defineProps({
+  modelValue: String
+});
+const emit = defineEmits(["update:modelValue", "update"]);
+
+const searchModel = computed({
+  get() {
+    return props.modelValue;
+  },
+  
+  set(newValue) {
+    emit("update", newValue);
+  }
+})
 </script>
 
 <template>
@@ -7,6 +22,7 @@
     <img src="../static/search.png">
 
     <input
+      v-model="searchModel"
       placeholder="Поиск ID, Имени, статуса или даты"
       class="search__input"
     />
